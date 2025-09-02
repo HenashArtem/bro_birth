@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f1220" />
+  <title>npm run birthday — Братові</title>
+  <meta name="description" content="Мемний, світлий і технічний сайт-привіталка для бро: термінал, жарти, конфеті, теми та шеринг." />
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти до вмісту</a>
+  <div class="shell">
+    <header class="hero">
+      <h1 class="title" aria-label="npm run birthday">npm run <span class="accent">birthday</span></h1>
+      <p class="subtitle">Сайт-привіталка. Працює на телефоні та ноуті. Чистий HTML/CSS/JS.</p>
+      <div class="controls" role="toolbar" aria-label="Управління">
+        <button class="btn" id="runBtn" aria-label="Запустити білд">▶️ npm run birthday</button>
+        <button class="btn green" id="jokeBtn" aria-label="Показати жарт">💡 random.dev.joke()</button>
+        <button class="btn orange" id="shareBtn" aria-label="Поділитися привітанням">📤 share()</button>
+        <button class="btn secondary" id="themeBtn" aria-label="Перемкнути тему">🌓 theme.toggle()</button>
+      </div>
+    </header>
+    <main id="main" class="panel-grid" style="margin-top:18px">
+      <section class="card terminal" aria-live="polite">
+        <div class="term-head" aria-hidden="true">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="muted" id="path">~/projects/bro-birthday</span>
+        </div>
+        <div class="term-body">
+          <pre class="log" id="log">$ npm run birthday
+</pre>
+          <div class="progress" aria-label="Прогрес завантаження"><span id="bar"></span></div>
+          <article class="greet" id="greet" aria-label="Привітання">
+            <h2>Макс, з Днем Народження! 🎉</h2>
+            <p id="wishText">
+              Нехай твій рік працює як стабільний продакшн без флаків і хотфіксів о 3:00.
+              Здоров'я — як у серверної стійки: 24/7 аптайм.
+              Доходи — як кількість вкладок у твоєму браузері: тільки ростуть.
+              Любов — без «мердж-конфліктів», з повним CI: турбота, підтримка, повага.
+            </p>
+            <ul class="commit-list" id="commits">
+              <li><span class="commit-hash">feat:</span> +100 до здоров'я, +200 до радості, +∞ до мотивації</li>
+              <li><span class="commit-hash">refactor:</span> прибрано баги з настрою — читабельність життя підвищено</li>
+              <li><span class="commit-hash">chore:</span> щоденний автосейв спокою і кайфу</li>
+              <li><span class="commit-hash">test:</span> покриття удачі 100%, усі кейси проходять зелено ✅</li>
+              <li><span class="commit-hash">perf:</span> оптимізовано маршрут «мрія → реальність», latency ≈ 0</li>
+            </ul>
+          </article>
+          <noscript>
+            <p class="noscript">JS вимкнено, тому тут статична версія привітання. Відкрий у браузері з увімкненим JavaScript, щоб побачити жарти, конфеті та кнопки.</p>
+          </noscript>
+        </div>
+      </section>
+      <aside class="card">
+        <h3 style="margin:0 0 8px">Release notes v<span id="year"></span>.🎂</h3>
+        <p class="muted" style="margin:0 0 12px">Зміни, що увійшли до релізу «Ти цього року»:</p>
+        <ul class="release">
+          <li>debug-режим для стресу вимкнено за замовчуванням</li>
+          <li>auto-scale для натхнення — увімкнено</li>
+          <li>покращено сумісність із вихідними та подорожами</li>
+          <li>темна/світла тема настрою синхронізується з погодою</li>
+        </ul>
+        <div class="tip">
+          <strong>Лайфхак:</strong> гарячі клавіші — <code>G</code> (привітання), <code>J</code> (жарт), <code>T</code> (тема).
+        </div>
+      </aside>
+    </main>
+    <p class="footer">Зроблено з любов'ю, мемами і трохи іронії.</p>
+  </div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <template id="shareTemplate">Макс, з Днем Народження! 🎉
+
+Нехай твій продакшн буде стабільний, здоров'я — з аптаймом 24/7,
+а мрії збираються й деплояться без конфліктів.
+
+feat: +100 до здоров'я, +200 до радості
+refactor: прибрав баги з настрою
+chore: автосейв кайфу щодня
+perf: мрія → реальність, latency ≈ 0
+
+Летимо далі! 🚀</template>
+</body>
+</html>
